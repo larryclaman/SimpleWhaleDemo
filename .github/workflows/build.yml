@@ -7,8 +7,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # - name: Checkout
-      #   uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
       # - name: Set up Docker Buildx
       #   id: buildx
@@ -26,7 +26,6 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_SECRET }}
 
-      - run: ls -l 
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v2
